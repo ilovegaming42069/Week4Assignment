@@ -12,10 +12,15 @@ public class Sera{
         number.add(num);
     }
     static void DeleteContact(String name){
-        int x = contact.indexOf(name);
-        contact.remove(name);
-        email.remove(x);
-        number.remove(x);
+        if (contact.contains(name)) {
+            int x = contact.indexOf(name);
+            contact.remove(name);
+            email.remove(x);
+            number.remove(x);
+        }
+        else {
+            System.out.println("No");
+        }
     }
     static void SearchContact(String name){
         if (contact.contains(name)){
